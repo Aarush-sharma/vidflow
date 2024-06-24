@@ -1,0 +1,17 @@
+{
+  "name": "@repo/store",
+  "module": "src/index.ts",
+  "type": "module",
+  "exports": {
+    "./index": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "redis": "^4.6.14"
+  }
+}
