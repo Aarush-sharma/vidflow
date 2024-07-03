@@ -17,9 +17,11 @@ app.get("/", async (c) => {
     }
 });
 
+app.all('/hello', (c) => c.text('Any Method /hello'))
+
 Bun.serve({
     fetch: app.fetch,
-    port: 8787,
+    port: 8080,
 })
 
 export default app;
