@@ -17,6 +17,17 @@ app.get("/", async (c) => {
     }
 });
 
+app.post("/", async (c) => {
+    const key = c.req.query("key");
+    if (key) {
+        const text = await roomManager.createId(key);
+        console.log(text);
+        return c.json(text);
+    } else if (typeof key == "undefined") {
+        return c.json({ msg: "hi there" });
+    }
+});
+
 app.all('/hello', (c) => c.text('Any Method /hello'))
 
 Bun.serve({
